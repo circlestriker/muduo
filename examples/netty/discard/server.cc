@@ -72,7 +72,7 @@ class DiscardServer
 
   TcpServer server_;
 
-  AtomicInt64 transferred_;
+  AtomicInt64 transferred_; //lwl why AtomicInt64? for concurrent, if int here needs mutex to protect. 
   AtomicInt64 receivedMessages_;
   int64_t oldCounter_;
   Timestamp startTime_;
